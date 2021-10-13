@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+    bool isLightOn, isDay, isCurtainsOpen;
+
+    cout << "Светло ли в комнате?" << endl;;
+    
+    cout << "Включена ли лампочка? 0 - нет, 1 - да" << endl;
+    cin >> isLightOn;
+    cout << "На улице день? 0 - нет, 1 - да" << endl;
+    cin >> isDay;
+    cout << "Открыты ли шторы? 0 - нет, 1 - да" << endl;
+    cin >> isCurtainsOpen;
+    if (isLightOn || isDay && isCurtainsOpen) {
+        cout << "В комнате светло!" << endl;
+    }
+    else {
+        cout << "В комнате темно..." << endl;
+    }
+    return 0;
+}

@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+    ofstream out("C:\\Users\\valen\\Desktop\\numbers.txt");
+
+    for (int i = 0; i <= 10; i++) {
+        out << i << endl;
+    }
+    out.close();
+
+    ifstream in("C:\\Users\\valen\\Desktop\\numbers.txt");
+
+    double num, sum = 0;
+
+    while (in >> num) {
+        sum += num;
+    }
+
+    cout << "Сумма чисел в файле: " << sum << endl;
+
+    return 0;
+}

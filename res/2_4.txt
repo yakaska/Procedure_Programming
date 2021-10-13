@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+    cout << "Вывести 10 чисел от числа N" << endl;
+
+    int N;
+
+    while (N < 1) {
+        cout << "Введите натуральное N:" << endl;
+        cin >> N;
+    }
+
+    for (int i = N + 1; i < N + 10; i++) {
+        cout << i << endl;
+    }
+
+    return 0;
+}

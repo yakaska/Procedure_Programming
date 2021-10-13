@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+    double s, p, n, r, m;
+
+    cout << "Расчёт выплаты по займу" << endl;
+    
+    cout << "Введите сумму займа:" << endl;
+    cin >> s;
+
+    cout << "Введите ставку по займу:" << endl;
+    cin >> p;
+
+    cout << "Введите число лет:" << endl;
+    cin >> n;
+
+    r = p / 100;
+
+    m = (s * r * pow(1 + r, n)) / (12 * (pow(1+r, n) - 1));
+
+    cout << "Ваша ежемесячная выплата равна: " << m << endl;
+
+    return 0;
+}

@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+string sign(double number) {
+    if (number > 0) {
+        return "Знак равен <+>";
+    }
+    else if (number == 0) {
+        return "Знак равен нулю";
+    }
+    else {
+        return "Знак равен <->";
+    }
+}
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+    double a;
+
+    cout << "Определение знака числа" << endl;
+
+    cout << "Введите число для проверки знака: ";
+    cin >> a;
+
+    cout << sign(a) << endl;
+
+    return 0;
+}

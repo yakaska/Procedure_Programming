@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+	string str = "gdetkmbopes";
+
+	cout << "Неотсортированная строка: " << str << endl;
+
+	sort(str.begin(), str.end());
+
+	cout << "Oтсортированная строка: " << str << endl;
+
+    return 0;
+}

@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+//bx + c = 0
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+    double b, c;
+
+    cout << "Решение уравнений вида bx + c = 0" << endl;
+
+    cout << "Введите b: " << endl;
+    cin >> b;
+
+    cout << "Введите с: " << endl;
+    cin >> c;
+
+    if (b == 0 && c == 0) {
+        cout << "Бесконечное множество решений" << endl;
+    }
+    else if (b == 0 && c != 0) {
+        cout << "Не имеет решений" << endl;
+    }
+    else {
+        printf("Корень уравнения: %.3f", (-c) / b);
+    }
+}

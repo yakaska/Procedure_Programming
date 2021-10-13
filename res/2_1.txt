@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+    const double PI = 3.141592653589793;
+
+    int R, r, l, h, V, S;
+
+    cout << "Усеченный конус" << endl;
+
+    cout << "Введите радиус нижнего основания R:" << endl;
+    cin >> R;
+    cout << "Введите радиус верхнего основания r:" << endl;
+    cin >> r;
+    cout << "Введите образующую l:" << endl;
+    cin >> l;
+    cout << "Введите высоту h:" << endl;
+    cin >> h;
+
+    if (r == 0 || R == 0 || l == 0 || h == 0 || pow(R - r, 2) + pow(h, 2) != pow(l, 2)) {
+        cout << "Усеченный конус не задан!!!" << endl;
+    }
+    else {
+        printf("Oбъём: %.3f\n", (PI * h * (R * R + R * r + r * r))/3);
+        printf("Площадь полной поверхности: : %.3f\n", PI * (R * R + l * (R + r) + r * r));
+    }
+
+    return 0;
+}

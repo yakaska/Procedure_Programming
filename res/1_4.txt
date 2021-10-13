@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+//ax^2 + bx + c = 0
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+    double a, b, c;
+
+    cout << "Решение уравнений вида ax^2 + bx + c = 0" << endl;
+
+    cout << "Введите a: " << endl;
+    cin >> a;
+
+    cout << "Введите b: " << endl;
+    cin >> b;
+
+    cout << "Введите с: " << endl;
+    cin >> c;
+
+    if (a != 0) {
+        double disc = b * b - 4 * a * c;
+
+        cout << "Корни уравнения:" << endl;
+        if (disc > 0) {
+            printf("x1: %.3f", (-b) - sqrt(disc)) / (2 * a);
+            printf("x2: %.3f", (-b) + sqrt(disc)) / (2 * a);
+        }
+        else if (disc == 0) {
+            printf("x: %.3f", (-b) / (2 * a));
+        }
+        else {
+            cout << "Корней нет!";
+        }
+
+    }
+    else {
+        if (b != 0) {
+            printf("x: %.3f", (-c) / b);
+        }
+        else {
+            cout << "Корней нет!";
+        }
+    }
+
+    return 0;
+}

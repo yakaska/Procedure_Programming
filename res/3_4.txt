@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+//В Отдельной строке отдельное число
+
+bool isNumber(const string& str)
+{
+	return str.find_first_not_of("0123456789") == string::npos;
+}
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+	ifstream file;
+	string line;
+	file.open("C:\\Users\\valen\\Desktop\\example.txt");
+
+	while (getline(file, line)) {
+		if (isNumber(line)) {
+			cout << line << endl;
+		}
+	}
+
+    return 0;
+}

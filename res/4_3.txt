@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+double area(double a, double b) { //rectangle
+    return a * b;
+}
+
+double area(double radius) { //circle
+    double pi = 3.141592653589;
+    return pi * radius * radius;
+}
+
+double area(double a, double b, double c) { //triangle
+    double p1 = (a + b + c) / 2;
+    return sqrt(p1 * (p1 - a) * (p1 - b) * (p1 - c));
+}
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+    cout << "Площади фигур" << endl;
+
+    double a, b, c, r;
+    double S = 0;
+    int choise = 0;
+
+    while (choise != 1 && choise != 2 && choise != 3) {
+        cout << "Выберите фигуру для расчета площади: 1 - круг, 2 - прямоугольник, 3 - треугольник: ";
+        cin >> choise;
+    }
+
+    switch (choise)
+    {
+    case 1:
+        cout << "Введите радиус окружности: ";
+        cin >> r;
+        S = area(r);
+        break;
+    case 2:
+        cout << "Введите сторону а прямоугольника: ";
+        cin >> a;
+        cout << "Введите сторону b прямоугольника: ";
+        cin >> b;
+        S = area(a, b);
+        break;
+    case 3:
+        cout << "Введите сторону а треугольника: ";
+        cin >> a;
+        cout << "Введите сторону b треугольника: ";
+        cin >> b;
+        cout << "Введите сторону c треугольника: ";
+        cin >> c;
+        S = area(a, b, c);
+        break;
+    default:
+        break;
+    }
+
+    if (S > 0) {
+        printf("Площадь равна: %.3f", S);
+    }
+    else {
+        cout <<"Введены некорректные данные"<< endl;
+    }
+    return 0;
+}

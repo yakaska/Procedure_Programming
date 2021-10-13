@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+
+    double x, b, y;
+
+    cout << "Вычисление значения функции вида z=ln(b-y)sqrt(b-x)" << endl;
+
+    cout << "Введите x:";
+    cin >> x;
+    cout << "Введите b:";
+    cin >> b;
+    cout << "Введите y:";
+    cin >> y;
+
+    if ((b - y) > 0 && (b - x) >= 0) {
+        printf("z=%.3f", log(b - y) * sqrt(b - x));
+    }
+    else {
+        cout << "Не определен" << endl;
+    }
+
+    return 0;
+}

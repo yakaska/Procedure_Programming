@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+/*
+    Индивидуальное задание №25
+    Нахождение наименьшего общего кратного
+    Якушев В.П
+*/
+
+/*
+    Наибольший общий делитель. 
+    Алгоритм Евклида(взаимное вычитание)
+*/
+int NOD(int a, int b) {
+    while (a != b) {
+        if (a > b) {
+            a -= b;
+        }
+        else {
+            b -= a;
+        }
+    }
+    return a;
+}
+
+/*
+    НОК = a * b / НОД (a, b)
+    Т.к в задании явно не указано какие числа использовать, то использую int
+*/
+int NOK(int a, int b) {
+    return abs(a * b) / NOD(a, b);
+}
+
+int main() {
+    setlocale(LC_ALL, "RUS");
+    int a, b;
+    cout << "--- Поиск наименьшего общего кратного ---" << endl;
+    cout << "Введите а и b: ";
+    cin >> a >> b;
+    printf("Наименьшее общее кратное: %.i", NOK(a, b));
+    return 0;
+}
