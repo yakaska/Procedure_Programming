@@ -1,27 +1,40 @@
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
 
-int main()
-{
-    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+int main() {
 
-    double a, b;
+    setlocale(LC_ALL, "ru_RU.UTF-8");
 
-    cout << "Введите число а:" << endl;
-    cin >> a;
+    cout << "Протабулировать функцию от x = -4 до x = 4 c шагом 0.5";
 
-    cout << "Введите число b:" << endl;
-    cin >> b;
+    cout << right << "\n\n";
 
-    printf("Сумма: %.3f \n", a + b);
-    printf("Разность: %.3f \n", a - b);
-    printf("Произведение: %.3f \n", a * b);
-    if (b == 0) {
-        cout << "Частное: делить на ноль нельзя!" << endl;
+    cout << left << setw(5) << "|X";
+
+    cout << left << setw(7) << "|Y";
+
+    cout << right << "|\n";
+
+    cout << right << "|----|------|\n";
+
+    cout.fill(' ');
+
+    for (double x = -4; x <= 4; x = x + 0.5) {
+        if ((x - 1) != 0) {
+            cout.precision(1);
+            cout << right << fixed << '|' << setw(4) << x;
+            cout.precision(3);
+            cout << right << fixed << '|' << setw(6) << (x * x - 2 * x + 2) / (x - 1);
+            cout << right << "|\n";
+        } else {
+            cout.precision(1);
+            cout << right << fixed << '|' << setw(4) << x;
+            cout << right << fixed << '|' << setw(6) << "   н/р";
+            cout << right << "|\n";
+        }
+
     }
-    else {
-        printf("Частное: %.3f \n", a / b);
-    }
 
-    return 0;
 }
