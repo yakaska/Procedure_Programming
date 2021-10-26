@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+/*
+    Наибольший общий делитель.
+    Алгоритм Евклида(взаимное вычитание)
+*/
+int NOD(int a, int b) {
+    while (a != b) {
+        if (a > b) {
+            a -= b;
+        }
+        else {
+            b -= a;
+        }
+    }
+    return a;
+}
+
+int main() {
+    setlocale(LC_ALL, "ru_RU.UTF-8");
+    int a, b;
+    cout << "--- Поиск наибольшего общего делителя ---" << endl;
+    cout << "Введите а и b: ";
+    cin >> a >> b;
+    printf("Наибольший общий делитель: %.i", NOD(a, b));
+    return 0;
+}
+
+
+

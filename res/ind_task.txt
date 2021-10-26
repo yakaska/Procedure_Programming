@@ -26,7 +26,6 @@ int NOD(int a, int b) {
 
 /*
     НОК = a * b / НОД (a, b)
-    Т.к в задании явно не указано какие числа использовать, то использую int
 */
 int NOK(int a, int b) {
     return abs(a * b) / NOD(a, b);
