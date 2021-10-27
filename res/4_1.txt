@@ -6,7 +6,8 @@ using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+    // при проверке создайте свой файл и построчно в него введите числа или буквы(каждому числу или слову своя строка)
+    setlocale(LC_ALL, "Rus"); // установка русского
 
     ofstream out("C:\\Users\\valen\\Desktop\\numbers.txt");
 

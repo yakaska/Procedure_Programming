@@ -16,7 +16,7 @@ string sign(double number) {
 
 int main()
 {
-    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+    setlocale(LC_ALL, "Rus"); // установка русского
 
     double a;
 

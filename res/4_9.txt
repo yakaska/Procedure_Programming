@@ -70,7 +70,7 @@ int main() {
     int toBase = 8;
     int decimal;
 
-    setlocale(LC_ALL, "ru_RU.UTF-8");
+    setlocale(LC_ALL, "Rus");
     cout << "Введите число для перевода в другую СС: ";
     cin >> str;
     cout << endl;

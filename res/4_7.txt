@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int generate_random(int i, int m, int c)
+{
+    if (i == 0) return 0;
+    else return ((m * generate_random(i - 1, m, c) + i) % c);
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Rus");
+    int m, k, c;
+    cout << "Пожалуйста, введите m : ";
+    cin >> m;
+    cout << "Пожалуйста, введите i : ";
+    cin >> k;
+    cout << "Пожалуйста, введите c : ";
+    cin >> c;
+
+    for (int i = 0; i < (k+1); i++) {
+        cout << "При i = " << i << ": S(" << i + 1 << ") = " << generate_random(i, m, c) << endl;
+    }
+
+    return 0;
+}

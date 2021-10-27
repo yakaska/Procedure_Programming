@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
-
+/*
+    Решето Эратосфена
+*/
 
 //выводит список простых чисел, полученных решетом Эратосфена1
 void eratosthenes(bool isPrimes[], int N) {

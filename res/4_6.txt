@@ -27,10 +27,9 @@ int romanToInt(string s) {
 
 int main()
 {
-    setlocale(LC_ALL, "ru_RU.UTF-8");
+    setlocale(LC_ALL, "Rus");
     string a;
-    cout << "Roma Invicta!" << endl;
-    cout << "Введите число для перевода из Римской записи: ";
+    cout << "Введите число менее 4000 для перевода из Римской записи: ";
     cin >> a;
     cout << romanToInt(a);
 }

@@ -17,7 +17,7 @@ double area(double a, double b, double c) { //triangle
 
 int main()
 {
-    setlocale(LC_ALL, "ru_RU.UTF-8"); // установка русского
+    setlocale(LC_ALL, "Rus"); // установка русского
 
     cout << "Площади фигур" << endl;
 
