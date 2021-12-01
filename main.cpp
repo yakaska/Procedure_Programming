@@ -21,7 +21,7 @@ int main() {
 
     int *pointerToNumber = generateNumber(generatedNumber);
 
-    //cout << pointerToNumber[0] << pointerToNumber[1] << pointerToNumber[2] << pointerToNumber[3] << endl;
+    cout << pointerToNumber[0] << pointerToNumber[1] << pointerToNumber[2] << pointerToNumber[3] << endl;
 
     printf("Игра Быки и Коровы!");
     printf("\nПравила: '+' это бык, '-' это корова. \nКомпьютер придумывает 4-значное число. \nПлюс ставится, когда угадано число и его место, минус если не угадано");
@@ -42,7 +42,10 @@ int main() {
                 win = true;
             } else {
                 printf("Продолжаем... ");
-                printf("Ваш результат: %s", result.c_str());
+                printf("Ваш результат: минусов: %d, плюсов: %d",
+                       count(result.begin(), result.end(), '-'),
+                       count(result.begin(), result.end(), '+')
+                       );
             }
         } else {
             printf("Введите ВЕРНОЕ число!");
@@ -70,9 +73,10 @@ string checkNumber(int userNumber, const int *generatedNumber) {
     userNumberArray[1] = userNumber / 100 % 10;
     userNumberArray[2] = userNumber / 10 % 10;
     userNumberArray[3] = userNumber % 10;
+    int temp[] = {generatedNumber[0], generatedNumber[1], generatedNumber[2], generatedNumber[3]};
     for (int i = 0; i < 4; i++) {
-        if (userNumberArray[i] == generatedNumber[i]) result.append("+");
-        else result.append("-");
+        if (userNumberArray[i] == temp[i]) result.append("+");
+        else if (find(begin(temp), end(temp), userNumberArray[i]) != end(temp))result.append("-");
     }
     return result;
 }
